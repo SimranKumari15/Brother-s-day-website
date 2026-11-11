@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Gift for Aarav 💗 (Sample)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --bg: #0d0d0d;
+    --card: #1e1e2e;
+    --pink: #f472b6;
+    --rose: #fb7185;
+    --gold: #f9c784;
+    --text: #f5e6ee;
+    --muted: #c9a0b4;
+  }
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+section {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#page1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.small-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+.headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--pink);
+  font-style: italic;
+}
+
+.heart {
+  display: block;
+  text-align: center;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
+
+.subtext {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+.envelope-container {
+  margin-top: 2.5rem;
+}
+
+.envelope {
+  width: 280px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 20px rgba(244, 114, 182, 0.4));
+  transition: transform 0.3s;
+}
+
+.envelope:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.flap {
+  width: 0;
+  height: 0;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-top: 90px solid #2a1a22;
+}
+
+.env-body {
+  background: #1e1015;
+  border: 2px solid var(--pink);
+  border-top: none;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 12px 12px;
+}
+
+.seal {
+  font-size: 3rem;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+.btn {
+  margin-top: 2.5rem;
+  padding: 0.9rem 2.8rem;
+  background: transparent;
+  border: 2px solid var(--pink);
+  color: var(--pink);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: var(--pink);
+  color: #0d0d0d;
+  box-shadow: 0 0 24px rgba(244, 114, 182, 0.5);
+  transform: translateY(-3px);
+}
+#page2 {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  gap: 1rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1.5px solid #2a2a2a;
+  border-radius: 20px;
+  padding: 1.8rem 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card:hover {
+  border-color: var(--pink);
+  transform: translateY(-5px);
+  box-shadow: 0 0 24px rgba(244, 114, 182, 0.2);
+}
+
+.card-emoji {
+  font-size: 2.5rem;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.card-date {
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+.card-hint {
+  font-size: 0.8rem;
+  color: var(--pink);
+  margin-top: 0.3rem;
+}
+#page3, #page4, #page5, #page6 {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.story-box {
+  background: #1a1a2e;
+  border: 1.5px solid var(--pink);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  max-width: 620px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-shadow: 0 0 40px rgba(244, 114, 182, 0.15);
+}
+
+.story-date {
+  color: var(--pink);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+}
+
+.story-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  color: var(--text);
+}
+
+.story-text {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 1rem;
+}
+#page7 {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.letter-box {
+  background: #1a1a2e;
+  border: 1.5px solid var(--pink);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  max-width: 640px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0 40px rgba(244, 114, 182, 0.15);
+}
+
+.letter-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+.letter-sign {
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.liliput {
+  color: var(--rose);
+  font-weight: 700;
+  font-style: italic;
+  text-shadow: 0 0 12px rgba(251, 113, 133, 0.6);
+}
+@media (max-width: 480px) {
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .card {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .story-box, .letter-box {
+    padding: 2rem 1.2rem;
+  }
+
+  .letter-text {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+
+  .headline {
+    font-size: 2rem;
+  }
+
+}
+.petals {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.petals span {
+  position: absolute;
+  top: -50px;
+  font-size: 1.5rem;
+  animation: fall linear infinite;
+  opacity: 0.6;
+}
+
+.petals span:nth-child(1)  { left: 5%;  animation-duration: 8s;  animation-delay: 0s; }
+.petals span:nth-child(2)  { left: 15%; animation-duration: 12s; animation-delay: 2s; }
+.petals span:nth-child(3)  { left: 25%; animation-duration: 9s;  animation-delay: 1s; }
+.petals span:nth-child(4)  { left: 35%; animation-duration: 11s; animation-delay: 3s; }
+.petals span:nth-child(5)  { left: 45%; animation-duration: 7s;  animation-delay: 0.5s; }
+.petals span:nth-child(6)  { left: 55%; animation-duration: 13s; animation-delay: 4s; }
+.petals span:nth-child(7)  { left: 65%; animation-duration: 10s; animation-delay: 2.5s; }
+.petals span:nth-child(8)  { left: 75%; animation-duration: 8s;  animation-delay: 1.5s; }
+.petals span:nth-child(9)  { left: 85%; animation-duration: 11s; animation-delay: 3.5s; }
+.petals span:nth-child(10) { left: 95%; animation-duration: 9s;  animation-delay: 0.8s; }
+
+@keyframes fall {
+  0%   { transform: translateY(-50px) rotate(0deg);   opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+.music-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 48px;
+  height: 48px;
+  background: var(--card);
+  border: 1.5px solid var(--pink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 0 16px rgba(244, 114, 182, 0.3);
+  transition: all 0.3s;
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 24px rgba(244, 114, 182, 0.5);
+}
+</style>
+</head>
+
+<body>
+  <audio id="bgmusic" loop>
+  <!-- Add your own royalty-free track and name it music.mp3 -->
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-btn" onclick="toggleMusic()" id="musicBtn">
+  🎵
+</div>
+  <div class="petals">
+  <span>🌸</span>
+  <span>💗</span>
+  <span>✨</span>
+  <span>🖤</span>
+  <span>🌸</span>
+  <span>💗</span>
+  <span>✨</span>
+  <span>🌷</span>
+  <span>🌸</span>
+  <span>💗</span>
+</div>
+  <section id="page1">
+
+    <p class="small-text">🌸 Brother's Day Special 🌸</p>
+
+    <h1 class="headline">
+      For my <span class="highlight">cute</span> brother
+     <span class="heart">💗</span>
+    </h1>
+
+    <p class="subtext">Something I made just for you...</p>
+    <div class="envelope-container">
+
+    <div class="envelope">
+      <div class="flap"></div>
+      <div class="env-body">
+        <span class="seal">💌</span>
+      </div>
+    </div>
+    <button class="btn" onclick="goTo(2)">
+    Click me 💌
+  </button>
+
+  </div>
+
+</section>
+
+<section id="page2">
+
+  <p class="small-text">🖤 Our Memories 💗</p>
+  <h2 class="headline">moments i'll never forget</h2>
+
+  <div class="cards-grid">
+
+    <div class="card" onclick="goTo(3)">
+      <span class="card-emoji">🏏</span>
+      <h3 class="card-title">Rain &amp; Cricket</h3>
+      <p class="card-date">12 July 2026</p>
+      <p class="card-hint">tap to read 💗</p>
+    </div>
+
+    <div class="card" onclick="goTo(4)">
+      <span class="card-emoji">🎂</span>
+      <h3 class="card-title">The Secret Cake</h3>
+      <p class="card-date">3 March 2026</p>
+      <p class="card-hint">tap to read 💗</p>
+    </div>
+
+    <div class="card" onclick="goTo(5)">
+      <span class="card-emoji">🚲</span>
+      <h3 class="card-title">The Cycle Race</h3>
+      <p class="card-date">November 2025</p>
+      <p class="card-hint">tap to read 💗</p>
+    </div>
+
+    <div class="card" onclick="goTo(6)">
+      <span class="card-emoji">👀</span>
+      <h3 class="card-title">He Always Notices</h3>
+      <p class="card-date">September 2025</p>
+      <p class="card-hint">tap to read 💗</p>
+    </div>
+
+  </div>
+
+  <button class="btn" onclick="goTo(7)">
+    Continue 💗
+  </button>
+
+</section>
+
+<section id="page3">
+ <div class="story-box">
+  <p class="story-date">🏏 12 July 2026</p>
+  <h2 class="story-title">Rain &amp; Cricket</h2>
+  <p class="story-text">
+    Sunday, 4 pm, perfect weather. Then the sky decided to open like a
+    bucket. 🌧️ Did we go inside? No. Aarav declared the match "not over"
+    and bowled in the rain with a cricket bat he had named Thunder. ⚡
+    I stood in the garden holding an umbrella like a very serious
+    umpire. He hit one ball into Mrs. Sharma's flower pot and
+    immediately pointed at me and said, "Didi, you didn't see
+    anything." 😭 We came in dripping, covered in mud, and mom just
+    looked at us and said, "Two kids. Two baths. Now." 🏆
+  </p>
+  <button class="btn" onclick="goTo(2)">
+    ← Back to Memories
+  </button>
+ </div>
+</section>
+
+<section id="page4">
+ <div class="story-box">
+  <p class="story-date">🎂 3 March 2026</p>
+  <h2 class="story-title">The Secret Cake</h2>
+  <p class="story-text">
+    I wanted to bake a surprise cake for mom's birthday. Aarav
+    volunteered as "assistant chef", which meant he tasted the batter
+    every two minutes. 🍰 By the time the oven beeped, half the batter
+    was gone and the kitchen looked like a flour explosion. We
+    panicked, whispered, laughed, and somehow still made a cake. It
+    leaned a little to the left. He called it "the Tower of Pisa
+    special." Mom cried a little and laughed a lot. Best worst cake
+    ever. 🎉
+  </p>
+  <button class="btn" onclick="goTo(2)">
+    ← Back to Memories
+  </button>
+ </div>
+</section>
+
+<section id="page5">
+ <div class="story-box">
+  <p class="story-date">🚲 November 2025</p>
+  <h2 class="story-title">The Cycle Race</h2>
+  <p class="story-text">
+    "Didi, race to the end of the lane?" he said, already ten steps
+    ahead on his cycle. 🚲 I accepted, because honour was at stake.
+    I pedalled with everything I had. He turned around, grinned, and
+    rode with no hands on the handle to show off. Then the cycle hit a
+    tiny stone and he wobbled straight into a hedge. 😂 He got up, brushed
+    the leaves off, and said, "I let the hedge win." I have never
+    laughed so hard in my life. Still undefeated. (I'm not sure that's
+    true.) 🏁
+  </p>
+  <button class="btn" onclick="goTo(2)">
+    ← Back to Memories
+  </button>
+ </div>
+</section>
+
+<section id="page6">
+ <div class="story-box">
+  <p class="story-date">👀 September 2025</p>
+  <h2 class="story-title">He Always Notices</h2>
+  <p class="story-text">
+    My brother acts like he never listens. Then one random evening I
+    came home quiet after a long day, and he said nothing. He just
+    left a cup of chai on my desk, put on my favourite old song very
+    softly, and walked out. 🍵 No big speech. No questions. Just a
+    small, quiet kindness. It's strange how the loudest person in the
+    house can also be the most thoughtful one. Radar level:
+    supernatural. 🌸
+  </p>
+  <button class="btn" onclick="goTo(2)">
+    ← Back to Memories
+  </button>
+ </div>
+</section>
+
+<section id="page7">
+  <div class="letter-box">
+
+    <p class="story-date">💗 Happy Brother's Day</p>
+    <h2 class="story-title">For Aarav 🖤</h2>
+
+    <div class="letter-text">
+
+      <p>Hi, little chaos machine 🌪️😂</p>
+      <p>Happy Brother's Day!! 🎉</p>
+
+      <p>I'll say it once, so listen carefully: thank you for being the kind of brother who turns an ordinary day into a story. Rain, burnt cakes, hedges, all of it. 😎</p>
+
+      <p>You think I don't notice, but I do. The way you carry responsibility quietly. The way you sense when someone needs a cup of chai instead of advice. The way you stay playful even when life gets heavy. That's rare, and I hope you know it.</p>
+
+      <p>I'm proud of you. Not just for the big things, but for every small, good thing you do when nobody is watching.</p>
+
+      <p>I know the kind of person you're going to become. The kind people respect, love, and feel safe around. And when that day comes, just remember your <span class="liliput">favourite didi</span> called it first. 😎💗</p>
+
+      <p>Now stop reading and go eat something. 🍫</p>
+
+      <p class="letter-sign">With all my love, your slightly unhinged but very devoted <span class="liliput">didi,</span><br/>— Meera 💗</p>
+
+      <p class="story-date" style="margin-top:1.5rem;">✨ Sample design by Simran | @simran.webstudio ✨<br/>Want a personal page like this for someone you love? DM me.</p>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function goTo(page) {
+    document.querySelectorAll('section')
+      .forEach(s => s.style.display = 'none');
+    document.getElementById('page' + page)
+      .style.display = 'flex';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  let playing = false;
+
+function toggleMusic() {
+  const music = document.getElementById('bgmusic');
+  const btn = document.getElementById('musicBtn');
+  if (playing) {
+    music.pause();
+    btn.textContent = '🎵';
+    playing = false;
+  } else {
+    music.currentTime = 25;
+music.play();
+    btn.textContent = '⏸️';
+    playing = true;
+  }
+}
+</script>
+</body>
+
+</html>
