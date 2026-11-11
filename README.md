@@ -35,4 +35,4 @@ This is a fictional creative project. All characters, names, memories, relations
 
 Author
 
-Simran Kumarri
+Simran Kumari
